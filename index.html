@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTEELEC - Materiales Eléctricos Especializados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #cc0000;
+            --accent: #ff9900;
+            --light: #f8f9fa;
+            --dark: #333333;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        /* Contenedor de particles.js */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header Compacto */
+        header {
+            background: linear-gradient(135deg, var(--primary), #001a33);
+            color: white;
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        .logo-text p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.8rem;
+        }
+        
+        /* Navegación Compacta */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 0 0 5px 5px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            display: block;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Hero Section Mejorada */
+        .hero {
+            background: 
+                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 0, 0, 0.7)),
+                url('imagenes/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 153, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 153, 0, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 153, 0, 0.2) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: #e68900;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Secciones Compactas */
+        section {
+            padding: 2.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        /* Servicios Compactos */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .service-content {
+            padding: 1.2rem;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .service-content ul {
+            list-style-type: none;
+        }
+        
+        .service-content li {
+            padding: 4px 0;
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+        
+        .service-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Productos Compactos */
+        .products-section {
+            background-color: var(--light);
+        }
+        
+        .products-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 160px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 1.2rem;
+        }
+        
+        .product-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .product-category {
+            color: var(--gray);
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+        }
+        
+        .product-table th, .product-table td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        .product-table th {
+            background-color: #f2f2f2;
+            color: var(--primary);
+        }
+        
+        /* Catálogo Compacto */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+        
+        .catalog-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .catalog-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .catalog-img {
+            height: 160px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+        
+        .catalog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .catalog-content {
+            padding: 0.8rem;
+            text-align: center;
+        }
+        
+        .catalog-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .catalog-content p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* Contacto Mejorado con Fondo */
+        #contacto {
+            background: 
+                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 0, 0, 0.7)),
+                url('imagenes/fondo2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+        
+        #contacto .section-title h2 {
+            color: white;
+        }
+        
+        #contacto .section-title h2::after {
+            background-color: var(--accent);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--accent);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 51, 102, 0.1);
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer Compacto */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.85rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        /* Sección de Certificaciones */
+        .certifications {
+            background-color: var(--light);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .certification-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .certification-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .certification-item h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .certification-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero {
+                padding: 2.5rem 0;
+            }
+            
+            .products-tabs {
+                gap: 5px;
+            }
+            
+            .tab-btn {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 8px 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .catalog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor para particles.js -->
+    <div id="particles-js"></div>
+
+    <!-- Header Compacto -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>PROTE<span>ELEC</span></h1>
+                        <p>Materiales Eléctricos Especializados</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> proteelec@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +56 988199217</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación Compacta -->
+    <nav>
+        <div class="container nav-container">
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#servicios">Servicios <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#puesta-tierra">Sistema de Puesta a Tierra</a>
+                        <a href="#capacitacion">Capacitación Soldadura</a>
+                        <a href="#venta-materiales">Venta de Materiales</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#productos">Productos <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#" class="tab-link" data-tab="cobre">Piezas de Cobre</a>
+                        <a href="#" class="tab-link" data-tab="bronce">Piezas de Bronce</a>
+                        <a href="#" class="tab-link" data-tab="inox">Acero Inoxidable</a>
+                        <a href="#" class="tab-link" data-tab="terminales">Terminales</a>
+                        <a href="#" class="tab-link" data-tab="soldadura">Soldadura Exotérmica</a>
+                    </div>
+                </li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section Mejorada -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>Soluciones Eléctricas Especializadas</h2>
+            <p>PROTEELEC es una empresa dedicada a la venta de materiales eléctricos orientados a las Ingenierías Eléctricas y empresas de Telecomunicaciones.</p>
+            <a href="#contacto" class="btn">Solicitar Cotización</a>
+        </div>
+    </section>
+
+    <!-- Sección de Certificaciones -->
+    <section id="certificaciones" class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certificaciones</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>ISO 9001:2015</h3>
+                    <p>Sistema de Gestión de Calidad</p>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Normas IEC</h3>
+                    <p>Estándares Internacionales</p>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Certificación Técnica</h3>
+                    <p>Personal Calificado</p>
+                </div>
+                <div class="certification-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Control de Calidad</h3>
+                    <p>Procesos Verificados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Compactos -->
+    <section id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Sistema de Puesta a Tierra</h3>
+                        <ul>
+                            <li>Estudios Geoeléctricos</li>
+                            <li>Proyectos de mallas puesta tierra</li>
+                            <li>Soldaduras exotérmicas</li>
+                            <li>Moldes de grafito y aditivos</li>
+                            <li>Barras químicas y accesorios</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Capacitación en Soldadura</h3>
+                        <ul>
+                            <li>Capacitación práctica en terreno</li>
+                            <li>Procedimientos KLK-WELD</li>
+                            <li>Uso de moldes de grafito</li>
+                            <li>Técnicas de seguridad</li>
+                            <li>Manejo de equipos especializados</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Venta de Materiales</h3>
+                        <ul>
+                            <li>Materiales de cobre, bronce y acero</li>
+                            <li>Terminales y conectores especializados</li>
+                            <li>Componentes para puesta a tierra</li>
+                            <li>Pararrayos tipo Franklin</li>
+                            <li>Barras químicas y aditivos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Compactos con Pestañas -->
+    <section id="productos" class="products-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+            </div>
+            
+            <div class="products-tabs">
+                <button class="tab-btn active" data-tab="cobre">Piezas de Cobre</button>
+                <button class="tab-btn" data-tab="bronce">Piezas de Bronce</button>
+                <button class="tab-btn" data-tab="inox">Acero Inoxidable</button>
+                <button class="tab-btn" data-tab="terminales">Terminales</button>
+                <button class="tab-btn" data-tab="soldadura">Soldadura Exotérmica</button>
+            </div>
+            
+            <!-- Contenido de Pestañas -->
+            <div class="tab-content active" id="cobre-tab">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PLACASDE COBRE PGBOBDT.png" alt="Placas de Cobre PGB/BDT">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Cobre</span>
+                            <h3>Placas PGB/BDT</h3>
+                            <p>Placas de cobre para puesta a tierra y derivación.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/BARRA QUIMICADE COBRE.png" alt="Barra Química de Cobre">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Cobre</span>
+                            <h3>Barra Química</h3>
+                            <p>Barras de cobre con aditivos para mejorar la conductividad.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/BARRAS TOMA TIERRA.png" alt="Barras Toma Tierra">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Cobre</span>
+                            <h3>Barras Toma Tierra</h3>
+                            <p>Barras de cobre para sistemas de puesta a tierra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="bronce-tab">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PERNO PARTIDO CON ESPIGA DE BRONCE.png" alt="Perno Partido con Espiga">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Perno Partido con Espiga</h3>
+                            <p>Perno partido de bronce con espiga para conexiones.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PERNO PARTIDO SIN ESPIGADE BRONCE.png" alt="Perno Partido sin Espiga">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Perno Partido sin Espiga</h3>
+                            <p>Perno partido de bronce sin espiga.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PRENSA PARALELA BRONCE.png" alt="Prensa Paralela">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Prensa Paralela</h3>
+                            <p>Prensa paralela de bronce para conexiones.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PRENSA PARALELA SIMPLEDEBRONCE PARA 1CONDUCTOR.png" alt="Prensa Paralela Simple 1 Conductor">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Prensa Paralela Simple 1 Conductor</h3>
+                            <p>Prensa paralela simple para un conductor.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PRENSA PARALELA SIMPLE DE BRONCE PARA 2 CONDUCTORES.png" alt="Prensa Paralela Simple 2 Conductores">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Prensa Paralela Simple 2 Conductores</h3>
+                            <p>Prensa paralela simple para dos conductores.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/PRENSA PARALELADOBLE DE BRONCE PARA2 CONDUCTORES CON TAPA.png" alt="Prensa Paralela Doble 2 Conductores con Tapa">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Prensa Paralela Doble 2 Conductores</h3>
+                            <p>Prensa paralela doble para dos conductores con tapa.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/CONECTOR BARRAS TOMA TIERRA -BRONCE.png" alt="Conector para Barras Toma Tierra">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Conector para Barras Toma Tierra</h3>
+                            <p>Conector de bronce para barras de toma tierra.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/CONECTOR BRONCE TIPO MUELA - BRONCE.png" alt="Conector Tipo Muela">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Piezas de Bronce</span>
+                            <h3>Conector Tipo Muela</h3>
+                            <p>Conector de bronce tipo muela para conexiones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="inox-tab">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/Pararrayos Tipo Franklin.png" alt="Pararrayos Tipo Franklin">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Acero Inoxidable</span>
+                            <h3>Pararrayos Tipo Franklin</h3>
+                            <p>Pararrayos tipo Franklin con cabezal de acero inoxidable o bronce.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="terminales-tab">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/TERMINAL2PERFORACIONES.png" alt="Terminal 2 Perforaciones">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Terminales</span>
+                            <h3>Terminal 2 Perforaciones</h3>
+                            <p>Terminal con dos perforaciones para conexión.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/TERMINALEXTRA-LARGO.png" alt="Terminal Extra Largo">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Terminales</span>
+                            <h3>Terminal Extra Largo</h3>
+                            <p>Terminal de longitud extra para aplicaciones especiales.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/TERMINALSTANDARD.png" alt="Terminal Standard">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Terminales</span>
+                            <h3>Terminal Standard</h3>
+                            <p>Terminal estándar para conexiones eléctricas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="soldadura-tab">
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/CARGA EXOTERMICA.png" alt="Carga Exotérmica">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Soldadura Exotérmica</span>
+                            <h3>Carga Exotérmica</h3>
+                            <p>Cartuchos de soldadura exotérmica para conexiones.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/ADITIVO GEL METALCONEX.png" alt="Aditivo GEL">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Soldadura Exotérmica</span>
+                            <h3>Aditivo GEL</h3>
+                            <p>Aditivo en gel para mejorar la soldadura exotérmica.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="imagenes/ADITIVOGEM-METALCONEX.png" alt="Aditivo GEM">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Soldadura Exotérmica</span>
+                            <h3>Aditivo GEM</h3>
+                            <p>Aditivo GEM para soldadura exotérmica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Catálogo Compacto -->
+    <section id="catalogo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Catálogo de Productos</h2>
+            </div>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <div class="catalog-img">
+                        <img src="imagenes/PERNO PARTIDO CON ESPIGA DE BRONCE.png" alt="Perno Partido con Espiga">
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Perno Partido con Espiga</h3>
+                        <p>Bronce - Varios códigos</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-img">
+                        <img src="imagenes/PRENSA PARALELA BRONCE.png" alt="Prensa Paralela">
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Prensa Paralela</h3>
+                        <p>Bronce - Simple y doble</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-img">
+                        <img src="imagenes/CONECTOR BRONCE TIPO MUELA - BRONCE.png" alt="Conector Tipo Muela">
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Conector Tipo Muela</h3>
+                        <p>Bronce - Varias medidas</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-img">
+                        <img src="imagenes/PLACASDE COBRE PGBOBDT.png" alt="Placas PGB/BDT">
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Placas PGB/BDT</h3>
+                        <p>Cobre - Diferentes medidas</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-img">
+                        <img src="imagenes/BARRA QUIMICADE COBRE.png" alt="Barra Química">
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Barra Química</h3>
+                        <p>Cobre - Incluye aditivos</p>
+                    </div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-img">
+                        <img src="imagenes/CARGA EXOTERMICA.png" alt="Carga Exotérmica">
+                    </div>
+                    <div class="catalog-content">
+                        <h3>Carga Exotérmica</h3>
+                        <p>Para soldadura exotérmica</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="#contacto" class="btn">Solicitar Catálogo Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Mejorado con Fondo -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Av. Principal 123, Santiago, Chile</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+56 2 25364826</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>metalconex@gmail.com</p>
+                            <p>metalconex.joseamaya@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 8:00 - 18:00</p>
+                            <p>Sábados: 9:00 - 13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Compacto -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PROTEELEC</h3>
+                    <p>Empresa dedicada a la venta de materiales eléctricos orientados a las Ingenierías Eléctricas y empresas de Telecomunicaciones.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="tab-link" data-tab="cobre">Piezas de Cobre</a></li>
+                        <li><a href="#" class="tab-link" data-tab="bronce">Piezas de Bronce</a></li>
+                        <li><a href="#" class="tab-link" data-tab="inox">Acero Inoxidable</a></li>
+                        <li><a href="#" class="tab-link" data-tab="terminales">Terminales</a></li>
+                        <li><a href="#" class="tab-link" data-tab="soldadura">Soldadura Exotérmica</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PROTEELEC. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar particles.js con efecto eléctrico
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": ["#003366", "#ff9900", "#ffffff"]
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 4,
+                            "size_min": 0.3,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ff9900",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 200,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
+        // Menú móvil
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Dropdown en móviles
+        document.querySelectorAll('.dropdown > a').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
+
+        // Cerrar menú al hacer clic en un enlace (en móviles)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+        });
+
+        // Sistema de pestañas para productos
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones y contenidos
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Agregar clase active al botón clickeado
+                this.classList.add('active');
+                
+                // Mostrar el contenido correspondiente
+                const tabId = this.getAttribute('data-tab') + '-tab';
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Enlaces del menú desplegable que activan pestañas
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabName = this.getAttribute('data-tab');
+                
+                // Activar la pestaña correspondiente
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if(btn.getAttribute('data-tab') === tabName) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                    if(content.id === tabName + '-tab') {
+                        content.classList.add('active');
+                    }
+                });
+                
+                // Navegar a la sección de productos
+                document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por su mensaje. Nos pondremos en contacto con usted pronto.');
+            this.reset();
+        });
+
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.classList.contains('tab-link')) return; // Evitar conflicto con pestañas
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
