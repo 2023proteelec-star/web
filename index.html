@@ -178,8 +178,7 @@
         /* Hero Section Mejorada */
         .hero {
             background: 
-                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 0, 0, 0.7)),
-                url('imagenes/fondo.jpg');
+                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 0, 0, 0.7));
             background-size: cover;
             background-position: center;
             color: white;
@@ -493,8 +492,7 @@
         /* Contacto Mejorado con Fondo */
         #contacto {
             background: 
-                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 0, 0, 0.7)),
-                url('imagenes/fondo2.jpg');
+                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 0, 0, 0.7));
             background-size: cover;
             background-position: center;
             position: relative;
@@ -708,6 +706,52 @@
             color: var(--gray);
         }
         
+        /* Botón de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* Placeholder para imágenes faltantes */
+        .img-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: #e9ecef;
+            color: #6c757d;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .img-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .header-content {
@@ -755,6 +799,14 @@
             
             .hero p {
                 font-size: 0.9rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
             }
         }
         
@@ -805,12 +857,25 @@
             .catalog-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
+            
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Contenedor para particles.js -->
     <div id="particles-js"></div>
+
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/56983714262?text=Hola,%20estoy%20interesado%20en%20los%20productos%20de%20PROTEELEC" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Header Compacto -->
     <header>
@@ -992,7 +1057,8 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PLACASDE COBRE PGBOBDT.png" alt="Placas de Cobre PGB/BDT">
+                            <!-- Verificar que la ruta de la imagen sea correcta -->
+                            <img src="imagenes/PLACASDE COBRE PGBOBDT.png" alt="Placas de Cobre PGB/BDT" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Placas PGB/BDT</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Cobre</span>
@@ -1002,7 +1068,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/BARRA QUIMICADE COBRE.png" alt="Barra Química de Cobre">
+                            <img src="imagenes/BARRA QUIMICADE COBRE.png" alt="Barra Química de Cobre" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Barra Química</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Cobre</span>
@@ -1012,7 +1078,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/BARRAS TOMA TIERRA.png" alt="Barras Toma Tierra">
+                            <img src="imagenes/BARRAS TOMA TIERRA.png" alt="Barras Toma Tierra" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Barras Toma Tierra</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Cobre</span>
@@ -1027,7 +1093,7 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PERNO PARTIDO CON ESPIGA DE BRONCE.png" alt="Perno Partido con Espiga">
+                            <img src="imagenes/PERNO PARTIDO CON ESPIGA DE BRONCE.png" alt="Perno Partido con Espiga" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Perno Partido</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1037,7 +1103,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PERNO PARTIDO SIN ESPIGADE BRONCE.png" alt="Perno Partido sin Espiga">
+                            <img src="imagenes/PERNO PARTIDO SIN ESPIGADE BRONCE.png" alt="Perno Partido sin Espiga" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Perno Partido</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1047,7 +1113,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PRENSA PARALELA BRONCE.png" alt="Prensa Paralela">
+                            <img src="imagenes/PRENSA PARALELA BRONCE.png" alt="Prensa Paralela" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Prensa Paralela</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1057,7 +1123,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PRENSA PARALELA SIMPLEDEBRONCE PARA 1CONDUCTOR.png" alt="Prensa Paralela Simple 1 Conductor">
+                            <img src="imagenes/PRENSA PARALELA SIMPLEDEBRONCE PARA 1CONDUCTOR.png" alt="Prensa Paralela Simple 1 Conductor" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Prensa Paralela</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1067,7 +1133,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PRENSA PARALELA SIMPLE DE BRONCE PARA 2 CONDUCTORES.png" alt="Prensa Paralela Simple 2 Conductores">
+                            <img src="imagenes/PRENSA PARALELA SIMPLE DE BRONCE PARA 2 CONDUCTORES.png" alt="Prensa Paralela Simple 2 Conductores" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Prensa Paralela</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1077,7 +1143,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/PRENSA PARALELADOBLE DE BRONCE PARA2 CONDUCTORES CON TAPA.png" alt="Prensa Paralela Doble 2 Conductores con Tapa">
+                            <img src="imagenes/PRENSA PARALELADOBLE DE BRONCE PARA2 CONDUCTORES CON TAPA.png" alt="Prensa Paralela Doble 2 Conductores con Tapa" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Prensa Paralela</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1087,7 +1153,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/CONECTOR BARRAS TOMA TIERRA -BRONCE.png" alt="Conector para Barras Toma Tierra">
+                            <img src="imagenes/CONECTOR BARRAS TOMA TIERRA -BRONCE.png" alt="Conector para Barras Toma Tierra" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Conector</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1097,7 +1163,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/CONECTOR BRONCE TIPO MUELA - BRONCE.png" alt="Conector Tipo Muela">
+                            <img src="imagenes/CONECTOR BRONCE TIPO MUELA - BRONCE.png" alt="Conector Tipo Muela" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Conector Muela</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Piezas de Bronce</span>
@@ -1112,7 +1178,7 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/Pararrayos Tipo Franklin.png" alt="Pararrayos Tipo Franklin">
+                            <img src="imagenes/Pararrayos Tipo Franklin.png" alt="Pararrayos Tipo Franklin" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Pararrayos Franklin</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Acero Inoxidable</span>
@@ -1127,7 +1193,7 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/TERMINAL2PERFORACIONES.png" alt="Terminal 2 Perforaciones">
+                            <img src="imagenes/TERMINAL2PERFORACIONES.png" alt="Terminal 2 Perforaciones" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Terminal 2 Perf.</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Terminales</span>
@@ -1137,7 +1203,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/TERMINALEXTRA-LARGO.png" alt="Terminal Extra Largo">
+                            <img src="imagenes/TERMINALEXTRA-LARGO.png" alt="Terminal Extra Largo" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Terminal Extra</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Terminales</span>
@@ -1147,7 +1213,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/TERMINALSTANDARD.png" alt="Terminal Standard">
+                            <img src="imagenes/TERMINALSTANDARD.png" alt="Terminal Standard" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Terminal Standard</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Terminales</span>
@@ -1162,7 +1228,7 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/CARGA EXOTERMICA.png" alt="Carga Exotérmica">
+                            <img src="imagenes/CARGA EXOTERMICA.png" alt="Carga Exotérmica" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Carga Exotérmica</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Soldadura Exotérmica</span>
@@ -1172,7 +1238,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/ADITIVO GEL METALCONEX.png" alt="Aditivo GEL">
+                            <img src="imagenes/ADITIVO GEL METALCONEX.png" alt="Aditivo GEL" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Aditivo GEL</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Soldadura Exotérmica</span>
@@ -1182,7 +1248,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="imagenes/ADITIVOGEM-METALCONEX.png" alt="Aditivo GEM">
+                            <img src="imagenes/ADITIVOGEM-METALCONEX.png" alt="Aditivo GEM" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Aditivo GEM</div>'">
                         </div>
                         <div class="product-content">
                             <span class="product-category">Soldadura Exotérmica</span>
@@ -1205,7 +1271,7 @@
             <div class="catalog-grid">
                 <div class="catalog-item">
                     <div class="catalog-img">
-                        <img src="imagenes/PERNO PARTIDO CON ESPIGA DE BRONCE.png" alt="Perno Partido con Espiga">
+                        <img src="imagenes/PERNO PARTIDO CON ESPIGA DE BRONCE.png" alt="Perno Partido con Espiga" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Perno Partido</div>'">
                     </div>
                     <div class="catalog-content">
                         <h3>Perno Partido con Espiga</h3>
@@ -1214,7 +1280,7 @@
                 </div>
                 <div class="catalog-item">
                     <div class="catalog-img">
-                        <img src="imagenes/PRENSA PARALELA BRONCE.png" alt="Prensa Paralela">
+                        <img src="imagenes/PRENSA PARALELA BRONCE.png" alt="Prensa Paralela" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Prensa Paralela</div>'">
                     </div>
                     <div class="catalog-content">
                         <h3>Prensa Paralela</h3>
@@ -1223,7 +1289,7 @@
                 </div>
                 <div class="catalog-item">
                     <div class="catalog-img">
-                        <img src="imagenes/CONECTOR BRONCE TIPO MUELA - BRONCE.png" alt="Conector Tipo Muela">
+                        <img src="imagenes/CONECTOR BRONCE TIPO MUELA - BRONCE.png" alt="Conector Tipo Muela" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Conector Muela</div>'">
                     </div>
                     <div class="catalog-content">
                         <h3>Conector Tipo Muela</h3>
@@ -1232,7 +1298,7 @@
                 </div>
                 <div class="catalog-item">
                     <div class="catalog-img">
-                        <img src="imagenes/PLACASDE COBRE PGBOBDT.png" alt="Placas PGB/BDT">
+                        <img src="imagenes/PLACASDE COBRE PGBOBDT.png" alt="Placas PGB/BDT" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Placas PGB/BDT</div>'">
                     </div>
                     <div class="catalog-content">
                         <h3>Placas PGB/BDT</h3>
@@ -1241,7 +1307,7 @@
                 </div>
                 <div class="catalog-item">
                     <div class="catalog-img">
-                        <img src="imagenes/BARRA QUIMICADE COBRE.png" alt="Barra Química">
+                        <img src="imagenes/BARRA QUIMICADE COBRE.png" alt="Barra Química" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Barra Química</div>'">
                     </div>
                     <div class="catalog-content">
                         <h3>Barra Química</h3>
@@ -1250,7 +1316,7 @@
                 </div>
                 <div class="catalog-item">
                     <div class="catalog-img">
-                        <img src="imagenes/CARGA EXOTERMICA.png" alt="Carga Exotérmica">
+                        <img src="imagenes/CARGA EXOTERMICA.png" alt="Carga Exotérmica" onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i>Carga Exotérmica</div>'">
                     </div>
                     <div class="catalog-content">
                         <h3>Carga Exotérmica</h3>
@@ -1549,43 +1615,11 @@
             });
         });
 
-        // Formulario de contacto - Envío con limpieza automática
+        // Formulario de contacto
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Mostrar indicador de envío
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            // Enviar formulario usando fetch
-            fetch(this.action, {
-                method: this.method,
-                body: new FormData(this),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Mostrar mensaje de éxito
-                    alert('Gracias por su mensaje. Nos pondremos en contacto con usted pronto.');
-                    
-                    // Limpiar el formulario
-                    this.reset();
-                } else {
-                    alert('Hubo un problema al enviar el mensaje. Por favor, inténtelo de nuevo.');
-                }
-            })
-            .catch(error => {
-                alert('Hubo un problema al enviar el mensaje. Por favor, inténtelo de nuevo.');
-            })
-            .finally(() => {
-                // Restaurar el botón
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
+            // Permitir que Formspree maneje el envío
+            // Solo mostrar mensaje de confirmación
+            alert('Gracias por su mensaje. Nos pondremos en contacto con usted pronto.');
         });
 
         // Smooth scrolling para enlaces internos
